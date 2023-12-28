@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+  }
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;      /*   3D me game chalane ke liye */
+}
+.container{
+    position: relative;             /*    // kyuki foreground background ki img ko overlap krwana hai to unki position absolute rkhenge isliye nearest ancestor ki position ko relative rkhre hai  */
+    display: flex;             /*  item ko center align krne ke liye */
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    transform-style: preserve-3d;   /*otherwise both pictures will stick to each other*/
+    z-index: -1;            /*layering */
+}
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover; 
+}
+h1{
+    position: absolute;
+    top:8rem;
+    font-size:5rem;
+    letter-spacing:.5px;
+    color:black;
+    text-shadow:0 0 8px rgba(0,0,0,0.3);
+    font-family: myFirstFont;
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color:white;
+    padding:5rem 0;
+}
+
+.secHeading{
+    font-size:4rem;
+    padding:0 10rem;
+}
+
+.text{
+    font-size:1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg{
+    position:relative;
+    width:100%;
+    background-attachment: fixed;   /*suring wali images fixed rhengi aur uske upr text scroll krega */
+    background-position: center;    /* image ko center me krne ke liye */
+    background-size: cover;       /*object ko uski jgh pe laane ke liye */
+    height:500px;
+}
+
+.desc{
+    position: absolute;
+    background-color: white;   
+    padding: 0.5rem 1rem;
+    top:50%;
+    left:35%;
+    transform: translateX(-50%) translateY(-50%);
+    color:black;
+    font-size:3rem;
+    font-weight:600;
+    font-family: myFirstFont;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
